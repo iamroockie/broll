@@ -1,0 +1,40 @@
+# Input Example
+
+hands = 1_000_000
+
+[bankroll]
+started = 1_000
+busted = 0
+
+[[limits]]
+name = "L10"
+ev = 9
+std_dev = 80
+move_up = 1000
+
+[[limits]]
+name = "L25"
+ev = 8
+std_dev = 85
+move_up = 2000
+move_down = 875
+
+[[limits]]
+name = "L50"
+ev = 7
+std_dev = 90
+move_down = 1500
+
+[cashout]
+interval = 50_000
+[cashout.kind]
+type = "profit_percentage"
+percentage = 0.5
+
+[[probabilities]]
+type = "reach_limit"
+limit_name = "L50"
+
+[[probabilities]]
+type = "profit"
+amount = 20_000
